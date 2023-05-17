@@ -1,0 +1,9 @@
+In the df.info output, I noticed that the variables are non-null in their count and the dtypes are integers, objects, and floats. The integers and floats have the number 64, thus I assume they are 64 bit data types. There are 8 float variables, 7 integer variables, and 3 objects that take up 3.1 megabits of memory. 
+
+In the df.describe output, the tolls_amount from minimum to 75% is zero which I find questionable as to why those values are zero. 
+
+
+The trip_distance output from maximum to minimum seem off for most of the variables except for passenger_count, store_and_fwd_flag, improvement_surcharge, and trip_distance.
+
+For further the total_amount variable, the head seems to be normal, but the tail seems to have repeating data, so I would question the tail data. As for the rest of the data, the code seems to be to be manipulating and outputing the data correctly. 
+
