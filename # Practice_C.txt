@@ -1,0 +1,64 @@
+# Practice
+
+```c
+#include <stdio.h>
+#include <stdlib.h>
+
+typedef struct author_t{
+    char name[20];
+    int birthyear;
+    int publishings;
+}author;
+
+typedef struct book_t{
+    char name[20];
+    int year;
+    int numAuthors;
+    author * authors;
+}Book;
+
+int main() {
+    int numBooks;
+    author * authorSize;
+    Book * BookSize;
+
+    printf("How many books are in your collection?\n");
+    scanf("%d", &numBooks);
+
+    BookSize = malloc(sizeof(Book) * numBooks);
+    authorSize = malloc(sizeof(author) * BookSize->numAuthors);
+
+    while(numBooks) {
+        printf("What is the name of the book?\n");
+        fgets(BookSize->name, 20, stdin);
+        getchar();
+        printf("What is the year of the book?\n");
+        scanf("%d\n", &BookSize->year);
+        printf("How many authors?\n");
+        scanf("%\n", &BookSize->numAuthors);
+        while(BookSize->numAuthors) {
+            printf("What are the name of the authors?\n");
+            fgets(BookSize->authors->name, 20, stdin);
+            getchar();
+            BookSize->numAuthors++;
+        }
+        printf("What is the birth year of the authors?\n");
+        scanf("%d\n", &BookSize->authors->birthyear);
+        printf("What are the publishings?\n");
+        scanf("%d\n", &BookSize->authors->publishings);
+    }
+
+    printf("Summary:\n");
+    printf("%s\n", BookSize->name);
+    printf("%d\n", &BookSize->year);
+    printf("%d\n", &BookSize->numAuthors);
+    printf("%s\n", BookSize->authors->name);
+    printf("%d\n", &BookSize->authors->birthyear);
+    printf("%d\n", BookSize->authors->publishings);
+
+    free(BookSize);
+    free(authorSize);
+
+    return 0;
+}
+```
